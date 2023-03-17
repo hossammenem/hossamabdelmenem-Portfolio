@@ -1,0 +1,57 @@
+[
+  {
+    "name": "HTML5",
+    "img": "HTML5.svg",
+    "tag": "Front-end"
+  },
+  {
+    "name": "Css3",
+    "img": "CSS3.svg",
+    "tag": "Front-end"
+  },
+  {
+    "name": "TypeScript",
+    "img": "TS.svg",
+    "tag": "Front-end"
+  },
+  {
+    "name": "Tailwind",
+    "img": "Tailwind.svg",
+    "tag": "Front-end"
+  },
+  {
+    "name": "NodeJS",
+    "img": "NodeJS.svg",
+    "tag": "Back-end"
+  },
+  {
+    "name": "NextJS",
+    "img": "NextJS.svg",
+    "tag": "Back-end"
+  },
+  {
+    "name": "Postgresql",
+    "img": "Postgresql.svg",
+    "tag": "Back-end"
+  },
+  {
+    "name": "MongoDB",
+    "img": "MongoDB.svg",
+    "tag": "Back-end"
+  },
+  {
+    "name": "GraphQl",
+    "img": "GraphQl.svg",
+    "tag": "Back-end"
+  },
+  {
+    "name": "ExpressJS",
+    "img": "ExpressJS.svg",
+    "tag": "Back-end"
+  },
+  {
+    "name": "Prisma",
+    "img": "Prisma.svg",
+    "tag": "Back-end"
+  }
+]

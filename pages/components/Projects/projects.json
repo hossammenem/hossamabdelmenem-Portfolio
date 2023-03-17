@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Rhazes Esports",
+    "img": "rhazeswebsite",
+    "tags": [
+      "NextJS",
+      "Graphql",
+      "Typescript",
+      "Postgres",
+      "Tailwind",
+      "Prisma"
+    ],
+    "description": "A website for an Esports orgnization that let's user get information about the org's latest news, upcoming matches and a from for sponsers to contact with the org. Additionally, there is a protected admin panel for admins to add matches to the schedule",
+    "liveSiteLink": ""
+  },
+
+  {
+    "title": "Chatting Website",
+    "img": "chattingwebsite",
+    "tags": ["ReactJS", "Typescript", "mongoDB", "expressJS"],
+    "description": "A real-time chatting web app, You can login or create a new account, and You can create/join chatrooms to communicate with your friends",
+    "gitRepoLink": "https://github.com/hossammenem/chatting-web-app",
+    "liveSiteLink": "https://chatappfrontend.onrender.com/"
+  },
+  {
+    "title": "Bug Tracker",
+    "img": "bugtrackingwebsite",
+    "tags": ["ReactJS", "Typescript", "mongoDB", "expressJS"],
+    "description": "A Bug Tracking website that provides for the users the ability to track their bugs, by creating or joining tables to work with their team on bugs and track the status of those bugs",
+    "gitRepoLink": "https://github.com/hossammenem/Bug-Tracker",
+    "liveSiteLink": "https://bug-tracker-app.onrender.com/"
+  }
+]
