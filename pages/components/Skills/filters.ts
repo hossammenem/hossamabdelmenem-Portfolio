@@ -4,7 +4,7 @@ import skillsDB from "./skills.json";
 import { ISkill } from "./SkillCard";
 import { useEffect } from "react";
 
-export default function filters() {
+export default function useFilters() {
   const skills = skillsDB as ISkill[];
   const [, setSkills] = useAtom(skillsAtom);
 
