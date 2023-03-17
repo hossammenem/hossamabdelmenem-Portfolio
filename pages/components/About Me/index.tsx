@@ -8,9 +8,9 @@ export default function AboutMe() {
               About Me
             </h3>
             <p>
-              I'm a full stack web developer with a bit of experience in web
-              security, motivated to build clean and secure websites and imporve
-              myself daily
+              I&apos;m a full stack web developer with a bit of experience in
+              web security, motivated to build clean and secure websites and
+              imporve myself daily
             </p>
             <p>My goal is to always progress further and imporve myself </p>
           </div>
