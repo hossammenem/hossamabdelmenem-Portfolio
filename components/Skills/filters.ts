@@ -10,20 +10,24 @@ export default function useFilters() {
 
   useEffect(() => setSkills(skills), []);
 
-  function toggleActive(e: React.ChangeEvent<HTMLButtonElement>) {
+  function toggleActive(
+    e:
+      | React.ChangeEvent<HTMLButtonElement>
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) {
     document.querySelector(".active")?.classList.remove("active");
-    if (e) e.target.classList.add("active");
+    if (e.target instanceof HTMLButtonElement) e.target.classList.add("active");
   }
 
-  function filterAll(e: React.ChangeEvent<HTMLButtonElement>) {
+  function filterAll(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     setSkills(skills);
     toggleActive(e);
   }
-  function filterFrontend(e: React.ChangeEvent<HTMLButtonElement>) {
+  function filterFrontend(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     setSkills(skills.filter((skill) => skill.tag === "Front-end"));
     toggleActive(e);
   }
-  function filterBackend(e: React.ChangeEvent<HTMLButtonElement>) {
+  function filterBackend(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     setSkills(skills.filter((skill) => skill.tag === "Back-end"));
     toggleActive(e);
   }
