@@ -1,7 +1,7 @@
 import { Title } from "../Title";
 import { ProjectCard, IProject } from "./ProjectCard";
 import projects from "./projects.json";
-import { Animate } from "@/pages/AoS";
+import { Animate } from "@/components/AoS";
 
 export default function Projects() {
   return (

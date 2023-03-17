@@ -3,7 +3,7 @@ import Projects from "../components/Projects";
 import AboutMe from "../components/About Me";
 import Navbar from "../components/LgNavbar";
 import SliderNav from "../components/SmNavbar/SliderNav";
-import { Animate } from "./AoS";
+import { Animate } from "../components/AoS";
 import Hero from "../components/Hero";
 import ContactMe from "../components/Contact Me";
 
