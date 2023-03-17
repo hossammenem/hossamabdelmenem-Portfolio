@@ -1,12 +1,11 @@
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import AboutMe from "./components/About Me";
-import { Title } from "./components/Title";
-import Navbar from "./components/LgNavbar";
-import SliderNav from "./components/SmNavbar/SliderNav";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import AboutMe from "../components/About Me";
+import Navbar from "../components/LgNavbar";
+import SliderNav from "../components/SmNavbar/SliderNav";
 import { Animate } from "./AoS";
-import Hero from "./components/Hero";
-import ContactMe from "./components/Contact Me";
+import Hero from "../components/Hero";
+import ContactMe from "../components/Contact Me";
 
 export default function Home() {
   return (
