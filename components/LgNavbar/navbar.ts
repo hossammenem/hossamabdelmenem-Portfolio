@@ -20,7 +20,7 @@ export const toggleNav = () => {
         prevScrollpos = currentScrollPos;
 
         if (window.pageYOffset >= offSet) navbar.classList.add("sticky-bar");
-        else if (window.pageYOffset <= 50) navbar.style.top = "0";
+        else if (window.pageYOffset <= 50) navbar.style.top = "8px";
         else {
           navbar.classList.remove("sticky-bar");
           navbar.style.top = "-69px";

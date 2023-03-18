@@ -1,6 +1,6 @@
 [
   {
-    "title": "Rhazes Esports",
+    "title": "Rhazes Esports (Beta)",
     "img": "rhazeswebsite",
     "tags": [
       "NextJS",
@@ -10,8 +10,8 @@
       "Tailwind",
       "Prisma"
     ],
-    "description": "A website for an Esports orgnization that let's user get information about the org's latest news, upcoming matches and a from for sponsers to contact with the org. Additionally, there is a protected admin panel for admins to add matches to the schedule",
-    "liveSiteLink": ""
+    "description": "A website for an Esports organization that lets users get information about the org's latest news, and upcoming matches, and a form for sponsors to contact the org ( This is Still the beta launch ).",
+    "liveSiteLink": "https://rhazes.vercel.app/"
   },
 
   {

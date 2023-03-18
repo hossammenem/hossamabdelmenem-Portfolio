@@ -16,7 +16,7 @@ export default function PreLoader() {
   return (
     <div
       className={`${
-        visible ? "z-40 opacity-100" : "-z-30 opacity-0"
+        visible ? "z-50 opacity-100" : "-z-30 opacity-0"
       } absolute inset-0 flex h-screen w-screen items-center justify-center bg-[#111212] transition-all duration-300 ease-in-out`}
     >
       <div className="relative h-14 w-14">

@@ -4,7 +4,7 @@ export default function ContactMe() {
   return (
     <>
       <div
-        className="mx-auto flex w-container flex-col items-center justify-center gap-8 pt-6 pb-28 text-center"
+        className="mx-auto flex w-container flex-col items-center justify-center gap-8 pt-12 md:pt-6 pb-28 text-center"
         id="contactme-section"
       >
         <Title>Get In Touch</Title>
@@ -13,7 +13,7 @@ export default function ContactMe() {
           short term projects
         </p>
         <a
-          className="w-fit cursor-pointer rounded-md bg-[#39A3EF] px-8 py-4 text-2xl font-bold transition-all duration-150 ease-in hover:bg-[#09387C]"
+          className="w-fit cursor-pointer rounded-md bg-[#39A3EF] px-8 py-4 text-2xl font-bold transition-all duration-150 ease-in hover:bg-blue-500"
           href="mailto:hossamabdelmenem6@gmail.com"
         >
           Say Hello
