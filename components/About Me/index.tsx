@@ -8,7 +8,7 @@ export default function AboutMe() {
               About Me
             </h3>
             <p>
-              I&apos;m a full-Stack Web Developer. I work with different databases like MongoDB and PostgreSQL and have experience developing user interfaces with NextJS. I&apos;m comfortable with both REST and GraphQL API architectures.
+              I&apos;m a full-Stack Web Developer. I work with different databases like MongoDB and PostgreSQL and have experience developing user interfaces with ReactJS/NextJS. I&apos;m comfortable with both REST and GraphQL API architectures.
             </p>
             <p>
               Additionally, I have some experience with web application penetration testing. I have used several command line tools including Amass, fuff, gobuster..etc, and also worked with different tools like Burp Suite and ZAP.
