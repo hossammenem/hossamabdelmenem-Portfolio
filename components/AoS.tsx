@@ -20,14 +20,11 @@ const useElementOnScreen = (ref: RefObject<Element>, runOnce: boolean) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry], observer) => {
-        if (runOnce) {
-          if (entry.isIntersecting) {
-            if (ref.current) {
-              observer.unobserve(ref.current);
-            }
-          }
+        if (runOnce && isIntersecting && ref.current) {
+          observer.unobserve(ref.current);
+        } else {
+          setIsIntersecting(entry.isIntersecting);
         }
-        setIsIntersecting(entry.isIntersecting);
       },
       { rootMargin }
     );
@@ -147,5 +144,5 @@ export const Animate = {
   FadeUp,
   ScaleIn,
   SlideFromLeft,
-  SlideFromRight
+  SlideFromRight,
 };
