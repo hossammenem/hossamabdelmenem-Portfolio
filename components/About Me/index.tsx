@@ -8,11 +8,11 @@ export default function AboutMe() {
               About Me
             </h3>
             <p>
-              I&apos;m a full stack web developer with a bit of experience in
-              web security, motivated to build clean and secure websites and
-              imporve myself daily
+              I&apos;m a full-Stack Web Developer. I work with different databases like MongoDB and PostgreSQL and have experience developing user interfaces with ReactJS/NextJS. I&apos;m comfortable with both REST and GraphQL API architectures.
             </p>
-            <p>My goal is to always progress further and imporve myself </p>
+            <p>
+              Additionally, I have some experience with web application penetration testing. I have used several command line tools including Amass, fuff, gobuster..etc, and also worked with different tools like Burp Suite and ZAP.
+            </p>
           </div>
           <div className="col-span-full row-span-1 mx-auto md:col-[7/-1]">
             <img src="/assests/aboutMe.svg" alt="ALT" />
