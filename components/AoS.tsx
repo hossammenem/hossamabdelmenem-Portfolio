@@ -20,11 +20,10 @@ const useElementOnScreen = (ref: RefObject<Element>, runOnce: boolean) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry], observer) => {
-        if (runOnce && isIntersecting && ref.current) {
+        if (runOnce && ref.current && entry.isIntersecting) {
           observer.unobserve(ref.current);
-        } else {
-          setIsIntersecting(entry.isIntersecting);
         }
+        setIsIntersecting(entry.isIntersecting);
       },
       { rootMargin }
     );
