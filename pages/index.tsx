@@ -3,7 +3,7 @@ import Projects from "../components/Projects";
 import AboutMe from "../components/About Me";
 import Navbar from "../components/LgNavbar";
 import SliderNav from "../components/SmNavbar/SliderNav";
-import { Animate } from "../components/AoS";
+import { AoS } from "../components/AoS";
 import Hero from "../components/Hero";
 import ContactMe from "../components/Contact Me";
 
@@ -20,19 +20,19 @@ export default function Home() {
       </header>
 
       <main>
-        <Animate.FadeUp runOnce>
+        <AoS.FadeUp>
           <AboutMe />
-        </Animate.FadeUp>
-        <Animate.FadeUp runOnce>
+        </AoS.FadeUp>
+        <AoS.FadeUp>
           <Skills />
-        </Animate.FadeUp>
+        </AoS.FadeUp>
         <Projects />
       </main>
       <footer className="mt-32 bg-gradient pb-4">
         <img src="/FooterWaves.svg" className="no-select w-screen" />
-        <Animate.FadeIn runOnce>
+        <AoS.FadeIn>
           <ContactMe />
-        </Animate.FadeIn>
+        </AoS.FadeIn>
       </footer>
     </>
   );

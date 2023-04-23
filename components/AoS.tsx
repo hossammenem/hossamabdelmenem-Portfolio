@@ -7,15 +7,19 @@ import {
   RefObject,
 } from "react";
 
-interface IAnimate {
+interface IAnimation {
   children: ReactNode;
+  runOnce?: boolean;
+  transitionProps?: CSSProperties;
+}
+
+interface IAnimate extends IAnimation {
   from: CSSProperties;
   to: CSSProperties;
   runOnce: boolean;
 }
 
 const useElementOnScreen = (ref: RefObject<Element>, runOnce: boolean) => {
-  const rootMargin = "0px";
   const [isIntersecting, setIsIntersecting] = useState(true);
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,7 +29,7 @@ const useElementOnScreen = (ref: RefObject<Element>, runOnce: boolean) => {
         }
         setIsIntersecting(entry.isIntersecting);
       },
-      { rootMargin }
+      { rootMargin: "-25% 0px" }
     );
     if (ref.current) {
       observer.observe(ref.current);
@@ -38,13 +42,18 @@ const useElementOnScreen = (ref: RefObject<Element>, runOnce: boolean) => {
   }, []);
   return isIntersecting;
 };
-const Animation = (props: IAnimate) => {
+
+const Animate = (props: IAnimate) => {
   const { current: runOnce } = useRef(props.runOnce);
   const ref = useRef<HTMLDivElement>(null);
   const onScreen = useElementOnScreen(ref, runOnce);
-  const defaultStyles: CSSProperties = {
+  const transitionDefaultProps: CSSProperties = {
     transition: "0.6s ease-in-out",
   };
+
+  const styleProps = props.transitionProps
+    ? props.transitionProps
+    : transitionDefaultProps;
 
   return (
     <div
@@ -52,11 +61,11 @@ const Animation = (props: IAnimate) => {
       style={
         onScreen
           ? {
-              ...defaultStyles,
+              ...styleProps,
               ...props.to,
             }
           : {
-              ...defaultStyles,
+              ...styleProps,
               ...props.from,
             }
       }
@@ -66,79 +75,63 @@ const Animation = (props: IAnimate) => {
   );
 };
 
-const FadeIn = ({
-  children,
-  runOnce = false,
-}: {
-  children: ReactNode;
-  runOnce?: boolean;
-}) => (
-  <Animation from={{ opacity: 0 }} to={{ opacity: 1 }} runOnce={runOnce}>
-    {children}
-  </Animation>
+const FadeIn = (props: IAnimation) => (
+  <Animate
+    from={{ opacity: 0 }}
+    to={{ opacity: 1 }}
+    runOnce={props.runOnce != undefined ? props.runOnce : true}
+    transitionProps={props.transitionProps}
+  >
+    {props.children}
+  </Animate>
 );
 
-const FadeUp = ({
-  children,
-  runOnce = false,
-}: {
-  children: ReactNode;
-  runOnce?: boolean;
-}) => (
-  <Animation
+const FadeUp = (props: IAnimation) => (
+  <Animate
     from={{ opacity: 0, translate: "0 2rem" }}
     to={{ opacity: 1, translate: "none" }}
-    runOnce={runOnce}
+    runOnce={props.runOnce != undefined ? props.runOnce : true}
+    transitionProps={props.transitionProps}
   >
-    {children}
-  </Animation>
+    {props.children}
+  </Animate>
 );
 
-const ScaleIn = ({
-  children,
-  runOnce = false,
-}: {
-  children: ReactNode;
-  runOnce?: boolean;
-}) => (
-  <Animation from={{ scale: "0" }} to={{ scale: "1" }} runOnce={runOnce}>
-    {children}
-  </Animation>
-);
-
-const SlideFromLeft = ({
-  children,
-  runOnce = false,
-}: {
-  children: ReactNode;
-  runOnce?: boolean;
-}) => (
-  <Animation
-    from={{ transform: "translateX(-100%)" }}
-    to={{ transform: "translateX(0px)" }}
-    runOnce={runOnce}
+const ScaleIn = (props: IAnimation) => (
+  <Animate
+    from={{ scale: "0" }}
+    to={{ scale: "1" }}
+    runOnce={props.runOnce != undefined ? props.runOnce : true}
+    transitionProps={props.transitionProps}
   >
-    {children}
-  </Animation>
+    {props.children}
+  </Animate>
 );
 
-const SlideFromRight = ({
-  children,
-  runOnce = false,
-}: {
-  children: ReactNode;
-  runOnce?: boolean;
-}) => (
-  <Animation
-    from={{ transform: "translateX(100%)" }}
-    to={{ transform: "translateX(0px)" }}
-    runOnce={runOnce}
+const SlideFromLeft = (props: IAnimation) => (
+  <Animate
+    from={{ transform: "translateX(-100%)", opacity: 0 }}
+    to={{ transform: "translateX(0px)", opacity: 1 }}
+    runOnce={props.runOnce != undefined ? props.runOnce : true}
+    transitionProps={props.transitionProps}
   >
-    {children}
-  </Animation>
+    {props.children}
+  </Animate>
 );
 
-export const Animate = {
+const SlideFromRight = (props: IAnimation) => (
+  <Animate
+    from={{ transform: "translateX(100%)", opacity: 0 }}
+    to={{ transform: "translateX(0px)", opacity: 1 }}
+    runOnce={props.runOnce != undefined ? props.runOnce : true}
+    transitionProps={props.transitionProps}
+  >
+    {props.children}
+  </Animate>
+);
+
+export const AoS = {
+  Animate,
   FadeIn,
   FadeUp,
   ScaleIn,

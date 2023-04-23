@@ -1,7 +1,7 @@
 import { Title } from "../Title";
 import { ProjectCard, IProject } from "./ProjectCard";
 import projects from "./projects.json";
-import { Animate } from "@/components/AoS";
+import { AoS } from "@/components/AoS";
 
 export default function Projects() {
   return (
@@ -12,9 +12,9 @@ export default function Projects() {
         {projects.map((project: IProject, index) => {
           const isEven: boolean = (index as number) % 2 == 0;
           return (
-            <>
+            <div key={index}>
               {isEven ? (
-                <Animate.SlideFromLeft runOnce>
+                <AoS.SlideFromLeft>
                   <ProjectCard
                     title={project.title}
                     img={project.img}
@@ -23,11 +23,10 @@ export default function Projects() {
                     direction={isEven ? "RtL" : "LtR"}
                     gitRepoLink={project.gitRepoLink}
                     liveSiteLink={project.liveSiteLink}
-                    key={index}
                   />
-                </Animate.SlideFromLeft>
+                </AoS.SlideFromLeft>
               ) : (
-                <Animate.SlideFromRight runOnce>
+                <AoS.SlideFromRight>
                   <ProjectCard
                     title={project.title}
                     img={project.img}
@@ -36,11 +35,10 @@ export default function Projects() {
                     direction={isEven ? "RtL" : "LtR"}
                     gitRepoLink={project.gitRepoLink}
                     liveSiteLink={project.liveSiteLink}
-                    key={index}
                   />
-                </Animate.SlideFromRight>
+                </AoS.SlideFromRight>
               )}
-            </>
+            </div>
           );
         })}
       </div>
