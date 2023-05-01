@@ -16,10 +16,12 @@ interface IAnimation {
 interface IAnimate extends IAnimation {
   from: CSSProperties;
   to: CSSProperties;
-  runOnce: boolean;
 }
 
-const useElementOnScreen = (ref: RefObject<Element>, runOnce: boolean) => {
+const useElementOnScreen = (
+  ref: RefObject<Element>,
+  runOnce: boolean | undefined
+) => {
   const [isIntersecting, setIsIntersecting] = useState(true);
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,7 +31,7 @@ const useElementOnScreen = (ref: RefObject<Element>, runOnce: boolean) => {
         }
         setIsIntersecting(entry.isIntersecting);
       },
-      { rootMargin: "-25% 0px" }
+      { rootMargin: "-150px 0px" }
     );
     if (ref.current) {
       observer.observe(ref.current);
@@ -47,13 +49,13 @@ const Animate = (props: IAnimate) => {
   const { current: runOnce } = useRef(props.runOnce);
   const ref = useRef<HTMLDivElement>(null);
   const onScreen = useElementOnScreen(ref, runOnce);
-  const transitionDefaultProps: CSSProperties = {
+  const defaultStyles: CSSProperties = {
     transition: "0.6s ease-in-out",
   };
 
   const styleProps = props.transitionProps
     ? props.transitionProps
-    : transitionDefaultProps;
+    : defaultStyles;
 
   return (
     <div
