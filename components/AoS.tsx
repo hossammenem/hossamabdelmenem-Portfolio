@@ -25,7 +25,7 @@ const useElementOnScreen = (
   const [isIntersecting, setIsIntersecting] = useState(true);
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry], observer) => {
+      ([entry]) => {
         if (runOnce && ref.current && entry.isIntersecting) {
           observer.unobserve(ref.current);
         }
