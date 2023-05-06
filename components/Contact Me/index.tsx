@@ -22,7 +22,9 @@ export default function ContactMe() {
       <div className="mx-auto flex w-container flex-col items-center gap-4 pb-4 text-center text-xs text-gray-300 sm:flex-row sm:justify-between md:text-sm">
         <span>&#169; 2023 Hossam Abd Elmenem</span>
         <span className="flex gap-3">
-          <a>hossamabdelmenem6@gmail.com</a>
+          <a href="https://dev.to/hossammenem" target="_blank">
+            Blog
+          </a>
           <p>|</p>
           <a href="https://github.com/hossammenem" target="_blank">
             Github
