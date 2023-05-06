@@ -32,7 +32,7 @@ const useElementOnScreen = (
         setIsIntersecting(entry.isIntersecting);
       },
       { rootMargin: "-150px 0px" }
-    );
+    ); 
     if (ref.current) {
       observer.observe(ref.current);
     }
