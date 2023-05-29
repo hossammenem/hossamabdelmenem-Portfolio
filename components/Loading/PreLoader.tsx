@@ -1,23 +1,32 @@
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { startHeroAnimation } from "./heroAnimation";
 import { startLogoAnimation } from "./logoAnimation";
 
 export default function PreLoader() {
   const [visible, setVisible] = useState(true);
+  const [finished, setFinished] = useState(false);
+
+  function animationEnd() {
+    setVisible(false);
+    document.body.classList.remove("no-scroll");
+    startHeroAnimation();
+  }
+
   useEffect(() => {
     (async () => {
       await startLogoAnimation();
-      setVisible(false);
-      document.body.classList.remove("no-scroll");
-      startHeroAnimation();
+      setFinished(true);
     })();
-  }, []);
+    if (finished && visible) {
+      animationEnd();
+    }
+  }, [visible, finished]);
 
   return (
     <div
       className={`${
         visible ? "z-50 opacity-100" : "-z-30 opacity-0"
-      } absolute inset-0 flex h-screen w-screen items-center justify-center bg-[#111212] transition-all duration-300 ease-in-out`}
+      } absolute inset-0 flex h-screen w-screen flex-col items-center justify-center bg-[#111212] transition-all duration-300 ease-in-out`}
     >
       <div className="relative h-14 w-14">
         <div className="absolute top-1/4 left-6 font-medium">
@@ -49,6 +58,12 @@ export default function PreLoader() {
           </g>
         </svg>
       </div>
+      <button
+        onClick={animationEnd}
+        className="absolute bottom-0 mb-20 text-sm text-gray-500 transition-colors duration-300 ease-in-out hover:text-gray-300"
+      >
+        Skip Animation
+      </button>
     </div>
   );
 }
