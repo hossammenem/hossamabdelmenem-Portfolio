@@ -1,3 +1,4 @@
+"use client";
 import cn from "classnames";
 import { useEffect, useState } from "react";
 import getRepoStats from "./getRepoStat";
