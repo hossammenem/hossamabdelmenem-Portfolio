@@ -1,6 +1,5 @@
-import { IOpenSource } from "./openSourceCard";
 import openSourceList from "./data/openSource.json";
-import OpenSourceCard from "./openSourceCard";
+import OpenSourceCard, { IOpenSource } from "./OpenSourceCard";
 import { AoS } from "../AoS";
 
 export default function OpenSourceProjects() {

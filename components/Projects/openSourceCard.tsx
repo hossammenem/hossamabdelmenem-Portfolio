@@ -24,7 +24,7 @@ interface IStats {
   forks: number;
 }
 
-export default function openSourceCard(props: IOpenSource) {
+export default function OpenSourceCard(props: IOpenSource) {
   const segment = `${props.owner}/${props.repo}`;
   const [stats, setStats] = useState<IStats>();
 
