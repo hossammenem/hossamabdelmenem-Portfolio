@@ -1,5 +1,3 @@
-import { ProjectTags } from "./ProjectTags";
-
 export interface IProject {
   title: string;
   description: string;
@@ -11,7 +9,7 @@ export interface IProject {
   // direction is determind by the text first, e.x. LtR is text from left to right and img from right to left and vice versa for Rtl
 }
 
-export const ProjectCard = (props: IProject) => {
+export const ProjectCard = (props: IProject ) => {
   const isLtR = props.direction === "LtR";
 
   const imgDir = isLtR
@@ -60,5 +58,20 @@ export const ProjectCard = (props: IProject) => {
         </div>
       </div>
     </div>
+  );
+};
+
+const ProjectTags = ({ tags }: { tags: string[] }) => {
+  return (
+    <>
+      {tags.map((tag, index) => (
+        <li
+          className="h-fit w-fit rounded-full bg-[#1E1E1E] px-4 py-1"
+          key={index}
+        >
+          {tag}
+        </li>
+      ))}
+    </>
   );
 };

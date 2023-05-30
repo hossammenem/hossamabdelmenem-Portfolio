@@ -4,7 +4,7 @@ export default function ContactMe() {
   return (
     <>
       <div
-        className="mx-auto flex w-container flex-col items-center justify-center gap-8 pt-12 md:pt-6 pb-28 text-center"
+        className="mx-auto flex w-container flex-col items-center justify-center gap-8 pt-12 pb-28 text-center md:pt-6"
         id="contactme-section"
       >
         <Title>Get In Touch</Title>
@@ -22,6 +22,10 @@ export default function ContactMe() {
       <div className="mx-auto flex w-container flex-col items-center gap-4 pb-4 text-center text-xs text-gray-300 sm:flex-row sm:justify-between md:text-sm">
         <span>&#169; 2023 Hossam Abd Elmenem</span>
         <span className="flex gap-3">
+          <a href="https://twitter.com/HossamAmenem1" target="_blank">
+            Twitter
+          </a>
+          <p>|</p>
           <a href="https://dev.to/hossammenem" target="_blank">
             Blog
           </a>
