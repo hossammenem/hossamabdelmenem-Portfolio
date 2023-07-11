@@ -1,27 +1,19 @@
 [
   {
-    "title": "Rhazes Esports",
-    "img": "rhazeswebsite",
-    "tags": [
-      "NextJS",
-      "Graphql",
-      "Typescript",
-      "Postgres",
-      "Tailwind",
-      "Prisma"
-    ],
-    "description": "A website for an Esports organization that lets users get information about the org's latest news, and upcoming matches.",
-    "liveSiteLink": "https://rhazes.vercel.app/en/",
-    "gitRepoLink": "https://github.com/hossammenem/Rhazes"
-  },
-
-  {
     "title": "Chatting Website",
     "img": "chattingwebsite",
     "tags": ["ReactJS", "Typescript", "mongoDB", "expressJS"],
     "description": "A real-time chatting web app, You can login or create a new account, and You can create/join chatrooms to communicate with your friends",
     "gitRepoLink": "https://github.com/hossammenem/chatting-web-app",
     "liveSiteLink": "https://chatappfrontend.onrender.com/"
+  },
+  {
+    "title": "Personal Finance Manager",
+    "img": "personalfinancemanagerwebsite",
+    "tags": ["Svelte", "Typescript", "Postgresql", "Prisma", "Tailwind"],
+    "description": "A simple personal finance manager website that provides a dashboard for users to track their income and expesnes via charts, a calendar for the bills, and adding their saving goals",
+    "gitRepoLink": "https://github.com/hossammenem/personal-finance-manager",
+    "liveSiteLink": "https://personal-finance-manager-ten.vercel.app/"
   },
   {
     "title": "Bug Tracker",
