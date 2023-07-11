@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export type Tag = "Front-end" | "Back-end";
+export type Tag = "Front-end" | "Back-end" | "Full-stack";
 export interface ISkill {
   img: string;
   alt: string;

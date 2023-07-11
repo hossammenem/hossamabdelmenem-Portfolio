@@ -24,11 +24,11 @@ export default function useFilters() {
     toggleActive(e);
   }
   function filterFrontend(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    setSkills(skills.filter((skill) => skill.tag === "Front-end"));
+    setSkills(skills.filter((skill) => skill.tag === "Front-end" || skill.tag === "Full-stack"));
     toggleActive(e);
   }
   function filterBackend(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-    setSkills(skills.filter((skill) => skill.tag === "Back-end"));
+    setSkills(skills.filter((skill) => skill.tag === "Back-end" || skill.tag === "Full-stack"));
     toggleActive(e);
   }
 

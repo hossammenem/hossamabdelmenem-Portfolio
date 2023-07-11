@@ -27,7 +27,17 @@
   {
     "name": "NextJS",
     "img": "NextJS.svg",
-    "tag": "Back-end"
+    "tag": "Full-stack"
+  },
+  {
+    "name": "React",
+    "img": "React.svg",
+    "tag": "Full-stack"
+  },
+  {
+    "name": "Svelte",
+    "img": "Svelte.svg",
+    "tag": "Full-stack"
   },
   {
     "name": "Postgresql",
