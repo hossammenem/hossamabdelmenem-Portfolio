@@ -100,7 +100,7 @@ a {
     @apply z-10 backdrop-blur-sm;
   }
   .slide {
-    @apply left-0;
+    @apply left-2;
   }
   .no-scroll {
     @apply max-h-screen;
