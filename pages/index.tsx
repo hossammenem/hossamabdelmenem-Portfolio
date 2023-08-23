@@ -2,7 +2,6 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import AboutMe from "../components/About Me";
 import Navbar from "../components/LgNavbar";
-import SliderNav from "../components/SmNavbar/SliderNav";
 import { AoS } from "../components/AoS";
 import Hero from "../components/Hero";
 import ContactMe from "../components/Contact Me";
@@ -13,7 +12,6 @@ export default function Home() {
       <header className="bg-gradient">
         <div className="mx-auto w-container" id="header">
           <Navbar />
-          <SliderNav />
           <Hero />
         </div>
         <img src="/HeroWaves.svg" className="no-select mt-32 w-screen" />

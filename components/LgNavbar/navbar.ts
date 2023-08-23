@@ -3,17 +3,15 @@ const isBroswer = typeof window !== "undefined";
 export const toggleNav = () => {
   if (isBroswer) {
     var prevScrollpos = window.pageYOffset;
-    const navbar: HTMLElement | null =
-      document.querySelector("#nav-wrapper") ?? null;
-    const header: HTMLElement | null =
-      document.querySelector("#header") ?? null;
+    const navbar: HTMLElement | null = document.querySelector("#navbar") ?? null;
+    const header: HTMLElement | null = document.querySelector("#header") ?? null;
 
     if (navbar && header) {
       const offSet = header.offsetHeight;
       window.onscroll = () => {
         var currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
-          navbar.style.top = "0";
+          navbar.style.top = "8px";
         } else {
           navbar.style.top = "-69px";
         }
