@@ -50,7 +50,7 @@ export default function smoothScroll(event: any, state: any) {
 }
 
 // scrollHeight not being calculated properly
-function getScrollParent(node: any) {
+function getScrollParent(node: any): any {
   if (node == null) return null;
   if (
     node.scrollHeight > node.clientHeight &&
