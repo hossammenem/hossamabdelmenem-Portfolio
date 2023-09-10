@@ -5,8 +5,12 @@ import Navbar from "../components/LgNavbar";
 import { AoS } from "../components/AoS";
 import Hero from "../components/Hero";
 import ContactMe from "../components/Contact Me";
+import scroll from "@/components/smooth-scroll";
 
 export default function Home() {
+  if (typeof window != "undefined") {
+    scroll();
+  }
   return (
     <>
       <header className="bg-gradient">
