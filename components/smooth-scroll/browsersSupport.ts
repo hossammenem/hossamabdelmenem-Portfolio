@@ -35,49 +35,40 @@ export function addEventListeners(
     state.setState("moving", false);
   }
 
-  useEffect(() => {
-    requestFrame =
-      window.requestAnimationFrame ||
-      // @ts-ignore
-      window.webkitRequestAnimationFrame ||
-      // @ts-ignore
-      window.mozRequestAnimationFrame ||
-      // @ts-ignore
-      window.oRequestAnimationFrame ||
-      // @ts-ignore
-      window.msRequestAnimationFrame ||
-      function (func: any) {
-        window.setTimeout(func, 1000 / 50);
-      };
-    target.addEventListener("wheel", scrollHandler, {
-      passive: false,
-    });
-
-    target.addEventListener("mousewheel", scrollHandler, {
-      passive: false,
-    });
-
-    target.addEventListener("DOMMouseScroll", scrollHandler, {
-      passive: false,
-    });
-
-    // those event listeneres are important for the user to be able
-    // to use the scroll bar
-
-    // mousedown to prevent the scroll bar from trying to keep on going back to
-    // the last pos that we scrolled to ( by the wheel )
-    target.addEventListener("mousedown", handleClick);
-
-    // mouseup to get the exact pos that the user has stopped at
-    target.addEventListener("mouseup", handleClick);
-    return () => {
-      target.removeEventListener("wheel", scrollHandler);
-      target.removeEventListener("DOMMouseScroll", scrollHandler);
-      target.removeEventListener("mousewheel", scrollHandler);
-      target.removeEventListener("mouseup", handleClick);
-      target.removeEventListener("mousedown", handleClick);
+  requestFrame =
+    window.requestAnimationFrame ||
+    // @ts-ignore
+    window.webkitRequestAnimationFrame ||
+    // @ts-ignore
+    window.mozRequestAnimationFrame ||
+    // @ts-ignore
+    window.oRequestAnimationFrame ||
+    // @ts-ignore
+    window.msRequestAnimationFrame ||
+    function (func: any) {
+      window.setTimeout(func, 1000 / 50);
     };
-  }, []);
+  target.addEventListener("wheel", scrollHandler, {
+    passive: false,
+  });
+
+  target.addEventListener("mousewheel", scrollHandler, {
+    passive: false,
+  });
+
+  target.addEventListener("DOMMouseScroll", scrollHandler, {
+    passive: false,
+  });
+
+  // those event listeneres are important for the user to be able
+  // to use the scroll bar
+
+  // mousedown to prevent the scroll bar from trying to keep on going back to
+  // the last pos that we scrolled to ( by the wheel )
+  target.addEventListener("mousedown", handleClick);
+
+  // mouseup to get the exact pos that the user has stopped at
+  target.addEventListener("mouseup", handleClick);
 }
 
 export { requestFrame };
