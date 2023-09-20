@@ -40,21 +40,29 @@ export default function smoothScroll(event: any, state: any) {
     const delta = (pos - target.scrollTop) / smooth;
 
     target.scrollBy({
-      top: Math.ceil(delta),
+      top: Math.round(delta),
       behavior: "instant",
     });
 
-    if (target.scrollTop != pos) requestFrame(frame);
+    if (Math.abs(delta) > 1) requestFrame(frame);
     else state.setState("moving", false);
   }
 }
 
-// scrollHeight not being calculated properly
 function getScrollParent(node: any): any {
   if (node == null) return null;
+
+  const overflow = window.getComputedStyle(node).overflowY;
+  console.log(
+    node,
+    node.offsetHeight,
+    node.clientHeight,
+    node.scrollHeight,
+    overflow
+  );
   if (
-    node.scrollHeight > node.clientHeight &&
-    node.offsetHeight > node.clientHeight
+    window.getComputedStyle(node).overflowY == "auto" &&
+    node.scrollHeight > node.clientHeight
   )
     return node;
   else return getScrollParent(node.parentNode);

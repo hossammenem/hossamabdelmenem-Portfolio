@@ -40,7 +40,7 @@ export const ProjectCard = (props: IProject ) => {
         <div className="relative h-fit rounded-sm bg-[#1E1E1E] p-4 shadow-md">
           <p>{props.description}</p>
         </div>
-        <ul className={`relative flex flex-row flex-wrap ${tagsDir} gap-3`}>
+        <ul className={`relative flex flex-row flex-wrap ${tagsDir} gap-2`}>
           <ProjectTags tags={props.tags} />
         </ul>
         <div className={`${tagsDir} flex gap-3`}>

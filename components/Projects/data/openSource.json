@@ -4,5 +4,11 @@
     "repo": "fast-log",
     "logo": "https://raw.githubusercontent.com/hossammenem/fast-log/master/assets/imgs/logo.png",
     "description": "\"fast-log\" is a simple extension that makes it easier for developers to print out variables when debugging their code."
+  },
+  {
+    "owner": "hossammenem",
+    "repo": "silky-smooth-scroll",
+    "logo": "https://raw.githubusercontent.com/hossammenem/silky-smooth-scrolling/master/silky-smooth-scroll-logo.png",
+    "description": "A simple js library that animates the scroll wheel smoothly using only vanilla js"
   }
 ]

@@ -39,12 +39,12 @@ export default function OpenSourceCard(props: IOpenSource) {
     <>
       <div
         className={cn(
-          "mx-auto flex w-full max-w-[800px] flex-col gap-3 rounded-sm bg-anotherBlack p-6 shadow-sm"
+          "mx-auto flex w-full max-w-[800px] flex-col gap-3 rounded-sm bg-anotherBlack p-4 shadow-sm"
         )}
       >
         <div
           className={cn(
-            "flex flex-col gap-3",
+            "grid gap-3",
             "xs:grid xs:auto-rows-auto xs:grid-cols-[105px,repeat(2,1fr)]",
             "md:grid-cols-[105px,repeat(5,1fr)] md:grid-rows-2"
           )}
@@ -58,12 +58,12 @@ export default function OpenSourceCard(props: IOpenSource) {
           >
             <img className="rounded-sm object-cover" src={props.logo} />
           </div>
-          {/* make the title change it's font size depending on the name of the repo */}
           <a
             className={cn(
               "text-md mt-2.5 font-bold text-[#39a3ef]",
               "col-[2/-1] row-[1]",
-              "md:col-[2/4] md:row-[1]"
+              "md:col-[2/4] md:row-[1]",
+              "overflow-hidden text-ellipsis whitespace-nowrap"
             )}
             href={`https://github.com/${segment}`}
             target="_blank"
@@ -93,19 +93,19 @@ export default function OpenSourceCard(props: IOpenSource) {
             <p className="my-2.5 text-sm sm:text-base">{props.description}</p>
           </div>
         </div>
-        <div
-          className={cn(
-            "xs:grid xs:auto-rows-auto xs:grid-cols-[105px,repeat(2,1fr)]",
-            "space-y-4 md:grid-cols-[105px,repeat(5,1fr)] md:grid-rows-1"
-          )}
-        >
-          {props.additionalContext && (
+        {props.additionalContext && (
+          <div
+            className={cn(
+              "xs:grid xs:auto-rows-auto xs:grid-cols-[105px,repeat(2,1fr)]",
+              "space-y-4 md:grid-cols-[105px,repeat(5,1fr)] md:grid-rows-1"
+            )}
+          >
             <p className="col-[1/-1] row-[1] text-sm sm:text-base">
               {props.additionalContext}
             </p>
-          )}
-          {props.PRs && <PRsList PRs={props.PRs} />}
-        </div>
+            {props.PRs && <PRsList PRs={props.PRs} />}
+          </div>
+        )}
       </div>
     </>
   );

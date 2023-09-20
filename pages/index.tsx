@@ -7,10 +7,12 @@ import Hero from "../components/Hero";
 import ContactMe from "../components/Contact Me";
 import scroll from "@/components/smooth-scroll";
 
+
 export default function Home() {
   if (typeof window != "undefined") {
     scroll();
   }
+
   return (
     <>
       <header className="bg-gradient">
@@ -30,6 +32,7 @@ export default function Home() {
         </AoS.FadeUp>
         <Projects />
       </main>
+
       <footer className="mt-32 bg-gradient pb-4">
         <img src="/FooterWaves.svg" className="no-select w-screen" />
         <AoS.FadeIn>

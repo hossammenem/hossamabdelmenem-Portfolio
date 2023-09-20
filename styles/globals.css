@@ -39,11 +39,24 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  overflow: hidden;
+}
+
 body {
   background-color: #111212;
   font-family: "Inter", sans-serif;
   color: #fff;
   overflow-x: hidden;
+}
+
+img {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+main {
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 a {
